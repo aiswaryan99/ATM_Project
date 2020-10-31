@@ -30,28 +30,6 @@ public class DataBase {
         return value;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static int lengthOfList() {
 
         int length = 0;
@@ -61,7 +39,6 @@ public class DataBase {
             XSSFWorkbook wb = new XSSFWorkbook(fis);
             XSSFSheet sh1 = wb.getSheetAt(0);
             length = sh1.getLastRowNum();
-            //int test = sh1.getLengthOfRow
             wb.close();
         } catch (IOException e) {
             e.printStackTrace();

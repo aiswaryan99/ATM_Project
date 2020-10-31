@@ -35,7 +35,7 @@ public class WelcomeScreen {
             Scanner sc = new Scanner(System.in);
             String pin =  sc.nextLine();
             if(pin.equals(DataBase.readExcelFile(clientNum, 2))) {
-                System.out.println(DataBase.readExcelFile(clientNum, 2));
+                System.out.println("Welcome " + DataBase.readExcelFile(clientNum, 3));
                 result = true;
                 break;
             } else {

@@ -19,7 +19,5 @@ public class Client {
     //    Double balanceOfCheckingAccount2;
     //    Double balanceOfSavingAccount;
     //    Double balanceOfMoneyMarketAccount;
-    public static void client(int clientNum) {
-        System.out.println("client class, client method");
-    }
+
 }
