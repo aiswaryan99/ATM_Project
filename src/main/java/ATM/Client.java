@@ -19,5 +19,4 @@ public class Client {
     //    Double balanceOfCheckingAccount2;
     //    Double balanceOfSavingAccount;
     //    Double balanceOfMoneyMarketAccount;
-
 }
