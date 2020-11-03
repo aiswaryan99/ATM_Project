@@ -6,10 +6,11 @@ public class WelcomeScreen {
 
     public static void WelcomeScreen() {
 
-        System.out.println("\t-= Welcome =-" +
-                "\n\t-= Group 1 =-" +
-                "\n  -= ATM Project =-" +
-                "\nPlease Enter Card Number");
+        System.out.println(
+                "\t-= Welcome =-\n" +
+                "\t-= Group 1 =-\n" +
+              "  -= ATM Project =-\n" +
+             "Please Enter Card Number");
         Scanner sc = new Scanner(System.in);
         String cardNum = sc.nextLine();
 
@@ -30,7 +31,7 @@ public class WelcomeScreen {
 
         boolean result = false;
         for(int i = 0; i < 3; i++) {
-            int count = 0;
+//            int count = 0;
             System.out.println("Enter your PIN");
             Scanner sc = new Scanner(System.in);
             String pin =  sc.nextLine();
@@ -40,10 +41,10 @@ public class WelcomeScreen {
                 break;
             } else {
                 System.out.println("Try again");
-                count++;
-                if(count == 2) {
+//                ++count;
+                if(i == 2) {
                     System.out.println("Account is blocked - call the office");
-                    //make a record in the client's file
+                    DataBase.writeExcelFile("1",clientNum, 1);
                     break;
                 }
             }
