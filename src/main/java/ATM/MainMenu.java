@@ -6,7 +6,7 @@ public class MainMenu {
 
     /**
      * create a method that printing questions ang getting answers
-     * then connect client choices with menu options and methods for thous options
+     * then connect client choices with menu options and methods for those options
      */
 
     public static void menu(int clientNum) {
