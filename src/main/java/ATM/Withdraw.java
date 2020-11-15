@@ -1,7 +1,5 @@
 package ATM;
 
-import com.sun.tools.jdeprscan.scan.Scan;
-
 import java.util.Scanner;
 
 public class Withdraw {
@@ -28,15 +26,20 @@ public class Withdraw {
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
-                CheckingAcc();
+               // Checking;
+                WithDrawMethods.CheckingAcc();
                 break;
             case 2:
                 // Savings
+                WithDrawMethods.SavingsAcc();
                 break;
             case 3:
                 // Money Market
                 System.out.println("Cannot Withdraw from this account(s) !");
                 break;
+            case 4:
+                // Main Menu Screen
+                // MainMenu.menu();
             default:
                 System.out.println("Wrong choice, please try again");
                 options(clientNum);
@@ -45,11 +48,11 @@ public class Withdraw {
 
     public static void numOfAccounts(int clientNum) {
 
-        if(DataBase.readExcelFile(clientNum) > 1) {
+        //if(DataBase.readExcelFile(clientNum) > 1) {
 
             // create method for 2 or more account
     }
 
 
     }
-}
+
