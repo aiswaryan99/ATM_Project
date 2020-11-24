@@ -6,20 +6,20 @@ public class MainMenu {
 
     /**
      * create a method that printing questions ang getting answers
-     * then connect client choices with menu options and methods for those options
+     * then connect client choices with menu options and methods for thous options
      */
 
     public static void menu(int clientNum) {
 
-        Client client = new Client();
-
-        System.out.println("\t-= Main Menu =-\n" +
-                "Choose from the following:\n" +
-                "1. Deposit\n" +
-                "2. Withdraw\n" +
-                "3. Transfer\n" +
-                "4. Balance\n" +
-                "5. Exit");
+        System.out.println("""
+                
+                     -= Main Menu =-
+                Choose from the following:
+                1. Deposit
+                2. Withdraw
+                3. Transfer
+                4. Balance
+                5. Exit""");
 
         options(clientNum);
     }

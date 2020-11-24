@@ -9,16 +9,16 @@ public class WelcomeScreen {
 
     public static void WelcomeScreen() {
 
-        System.out.println(
-                "\t-= Welcome =-\n" +
-                        "\t-= Group 1 =-\n" +
-                        "  -= ATM Project =-\n" +
-                        "Please Enter Card Number");
-        disableWarning2();
-        Scanner sc = new Scanner(System.in);
-        String cardNum = sc.nextLine();
+        System.out.println("""
+                    
+                    
+                        -= Welcome =-
+                        -= Group 1 =-
+                      -= ATM Project =-
+                   Please enter card number""");
 
-//        String cardNum = InputValidation.inputValidationStr();
+        disableWarning();
+        String cardNum = InputValidation.inputValidation();
 
         for (int i = 1; i <= DataBase.lengthOfList(); i++) {
             if (cardNum.equals(DataBase.readExcelFile(i, 0))) {
@@ -42,7 +42,7 @@ public class WelcomeScreen {
             Scanner sc = new Scanner(System.in);
             String pin = sc.nextLine();
             if (pin.equals(DataBase.readExcelFile(clientNum, 2))) {
-                System.out.println("Welcome " + DataBase.readExcelFile(clientNum, 3));
+                System.out.println("\n\nWelcome " + DataBase.readExcelFile(clientNum, 3));
                 result = true;
                 break;
             } else {
@@ -58,12 +58,7 @@ public class WelcomeScreen {
         return result;
     }
 
-    public static void disableWarning1() {
-        System.err.close();
-        System.setErr(System.out);
-    }
-
-    public static void disableWarning2() {
+    public static void disableWarning() {
         try {
             Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
             theUnsafe.setAccessible(true);
