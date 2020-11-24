@@ -33,7 +33,7 @@ public class DataBase {
     }
 
 
-    public static double readExcelFile(double amount,int row, int column) {
+    public static int readExcel(int row, int column) {
 
         double value = 0.0;
         try {
@@ -50,6 +50,7 @@ public class DataBase {
         }
         return value;
     }
+
     public static int lengthOfList() {
 
         int length = 0;
@@ -64,6 +65,25 @@ public class DataBase {
             e.printStackTrace();
         }
         return length;
+    }
+
+    public static void writeExcelFile(double value, int row, int column) {
+
+        try {
+            File src = new File(path);                                 // Creating a File object to declare the path
+            FileInputStream fis = new FileInputStream(src);            // Read the spreadsheet that needs to be updated
+            XSSFWorkbook wb = new XSSFWorkbook(fis);                   // Access the workbook
+            XSSFSheet sh1 = wb.getSheetAt(0);                    // Access the worksheet, so that we can update/modify it.
+            Cell cell = sh1.getRow(row).getCell(column);               // Declare a Cell object and access the given cell and given row to update the value
+            cell.setCellValue(value);                                 // Get current cell value value and overwrite the value
+            fis.close();                                                // Close the InputStream
+
+            FileOutputStream output_file = new FileOutputStream(src);  // Open FileOutputStream to write updates using the same path
+            wb.write(output_file);                                     // Write changes
+            output_file.close();                                       // Close the OutputStream
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void writeExcelFile(String strVal, int row, int column) {

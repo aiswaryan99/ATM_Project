@@ -11,8 +11,7 @@ public class MainMenu {
 
     public static void menu(int clientNum) {
 
-        //Client client = new Client();
-        //???how to pass information about client???
+        Client client = new Client();
 
         System.out.println("\t-= Main Menu =-\n" +
                 "Choose from the following:\n" +

@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class Withdraw {
 
-    double amount;
     double balance;
-
+    double amount;
 
     public static void menu(int clientNum) {
 
@@ -26,7 +25,7 @@ public class Withdraw {
         int choice = sc.nextInt();
         switch (choice) {
             case 1:
-               // Checking;
+                // Checking;
                 WithDrawMethods.CheckingAcc();
                 break;
             case 2:
@@ -45,14 +44,5 @@ public class Withdraw {
                 options(clientNum);
         }
     }
-
-    public static void numOfAccounts(int clientNum) {
-
-        //if(DataBase.readExcelFile(clientNum) > 1) {
-
-            // create method for 2 or more account
-    }
-
-
-    }
+}
 
