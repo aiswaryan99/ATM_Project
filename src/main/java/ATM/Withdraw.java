@@ -26,11 +26,11 @@ public class Withdraw {
         switch (choice) {
             case 1:
                 // Checking;
-                WithDrawMethods.CheckingAcc();
+                WithDrawMethods.CheckingAcc(clientNum);
                 break;
             case 2:
                 // Savings
-                WithDrawMethods.SavingsAcc();
+               // WithDrawMethods.SavingsAcc(clientNum);
                 break;
             case 3:
                 // Money Market
@@ -38,7 +38,7 @@ public class Withdraw {
                 break;
             case 4:
                 // Main Menu Screen
-                // MainMenu.menu();
+                 MainMenu.menu(clientNum);
             default:
                 System.out.println("Wrong choice, please try again");
                 options(clientNum);
