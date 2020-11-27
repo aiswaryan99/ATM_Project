@@ -41,8 +41,9 @@ class WithDrawMethods {
             }
 
         }
+    }
 
-    public static void SavingsAcc(clientNum) {
+        public static void SavingsAcc(int clientNum) {
 
         int savingsInt = Integer.parseInt(DataBase.readExcelFile(0, clientNum, 5));
         if (savingsInt > 1) {
@@ -71,9 +72,9 @@ class WithDrawMethods {
             System.out.println("Insufficient Funds! Please enter another amount!");
         }
 
-    int numW = Integer.parseInt(DataBase.readExcelFile(0, clientNum, 3));
-    if(numW >6)
-        System.out.println("There will be a $2 fee for this withdraw! \nWill you like to continue?");
+        int numW = Integer.parseInt(DataBase.readExcelFile(0, clientNum, 3));
+        if (numW > 6)
+            System.out.println("There will be a $2 fee for this withdraw! \nWill you like to continue?");
         System.out.println(" 1. Yes\n 2. No");
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
@@ -126,6 +127,8 @@ class WithDrawMethods {
                 }
             }
             if (option == 3) {
+
+                int checkingInt = Integer.parseInt(DataBase.readExcelFile(0, clientNum, 5));
                 System.out.println("which savings account do you want the fee to be taken from?");
                 System.out.println("Choose from the following:\n");
                 for (int i = 1; i <= checkingInt; i++) {
@@ -142,15 +145,16 @@ class WithDrawMethods {
                 balance = balance - 2;
                 // update balance to excel sheet
             }
-           } else {
-                System.out.println("Main Menu");
-                MainMenu.menu(clientNum);
-                System.out.println("Would you like to do anything else?");
+        } else {
+            System.out.println("Main Menu");
+            MainMenu.menu(clientNum);
+            System.out.println("Would you like to do anything else?");
         }
     }
 
 
-    public void numBills(int sum) {
+
+    public static void numBills (int sum) {
         System.out.println("""
                 How would you like to have your bills? Choose from the following! \t
                 1. 5's

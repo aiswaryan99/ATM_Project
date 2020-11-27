@@ -18,11 +18,11 @@ public class WelcomeScreen {
                    Please enter card number""");
 
         disableWarning();
-        String cardNum = InputValidation.inputValidation();
+        String cardNum = InputValidation.inputValidationFourDigits();
 
         for (int i = 1; i <= DataBase.lengthOfList(); i++) {
-            if (cardNum.equals(DataBase.readExcelFile(i, 0))) {
-                if (DataBase.readExcelFile(i, 1).equals("0")) {
+            if (cardNum.equals(DataBase.readExcelFile(0, i, 0))) {
+                if (DataBase.readExcelFile(0, i, 1).equals("0")) {
                     if (isPinCorrect(i)) {
                         MainMenu.menu(i);
                     }
@@ -41,8 +41,8 @@ public class WelcomeScreen {
             System.out.println("Enter your PIN");
             Scanner sc = new Scanner(System.in);
             String pin = sc.nextLine();
-            if (pin.equals(DataBase.readExcelFile(clientNum, 2))) {
-                System.out.println("\n\nWelcome " + DataBase.readExcelFile(clientNum, 3));
+            if (pin.equals(DataBase.readExcelFile(0, clientNum, 2))) {
+                System.out.println("\n\nWelcome " + DataBase.readExcelFile(0, clientNum, 3));
                 result = true;
                 break;
             } else {

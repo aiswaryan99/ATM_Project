@@ -30,7 +30,7 @@ public class Withdraw {
                 break;
             case 2:
                 // Savings
-               // WithDrawMethods.SavingsAcc(clientNum);
+                WithDrawMethods.SavingsAcc(clientNum);
                 break;
             case 3:
                 // Money Market

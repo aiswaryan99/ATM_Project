@@ -14,14 +14,14 @@ public class DataBase {
     //private final static String path = "/Users/ray/Documents/git/ATM_Project/src/main/DataBase/ClientDataBase.xlsx";
     private final static String path = "./src/main/DataBase/ClientDataBase.xlsx";
 
-    public static String readExcelFile(int row, int column) {
+    public static String readExcelFile(int sheet, int row, int column) {
 
         String value = "";
         try {
             File src = new File(path);
             FileInputStream fis = new FileInputStream(src);
             XSSFWorkbook wb = new XSSFWorkbook(fis);
-            XSSFSheet sh1 = wb.getSheetAt(0);
+            XSSFSheet sh1 = wb.getSheetAt(sheet);
             Cell cell = sh1.getRow(row).getCell(column);
             cell.setCellType(Cell.CELL_TYPE_STRING);
             value = cell.getStringCellValue();
@@ -33,7 +33,7 @@ public class DataBase {
     }
 
 
-    public static int readExcel(int row, int column) {
+    public static double readExcel(int row, int column) {
 
         double value = 0.0;
         try {
