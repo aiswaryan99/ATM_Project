@@ -43,14 +43,12 @@ public class Withdraw {
                 type = accountType.ACCOUNT_CHECKING;
                 numAccountColumn = 6;
                 accountSheet = 1;
-                //WithDrawMethods.CheckingAcc(clientNum);
                 break;
             case 2:
                 // Savings
                 type = accountType.ACCOUNT_SAVINGS;
                 numAccountColumn = 5;
                 accountSheet = 2;
-                //WithDrawMethods.SavingsAcc(clientNum);
                 break;
             case 3:
                 // Money Market
@@ -93,10 +91,14 @@ public class Withdraw {
             System.out.println("Insufficient funds!");
             return;
         }
+            if(amt<0){
+                System.out.println("Invalid Input");
+                return;
+        }
 
         if (!feeWithDrawal && type == accountType.ACCOUNT_SAVINGS &&
             withdrawals[choice] >= 6) {
-            System.out.println("There will be a fee of 2$ for withdrawal!");
+            System.out.println("There will be a fee of $2 for this withdrawal!");
             menu(clientNum, true);
 
         }
